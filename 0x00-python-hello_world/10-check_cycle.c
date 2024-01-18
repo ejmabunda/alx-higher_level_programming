@@ -1,5 +1,4 @@
 #include <stdlib.h> /* NULL */
-#include <stdio.h> /* printf */
 
 #include "lists.h"
 
@@ -13,13 +12,16 @@ int check_cycle(listint_t *list)
 {
 	listint_t *start_node;
 
+	/* save pointer to the head */
 	start_node = list;
 	while (list->next != NULL)
 	{
 		list = list->next;
+		/* check if head is encountered again */
 		if (start_node == list)
 			return (1);
 	}
 
+	/* no cycle */
 	return (0);
 }
