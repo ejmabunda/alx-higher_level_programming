@@ -1,7 +1,0 @@
-# Ignore emacs temp files
-*~
-\#*\#
-.\#*
-
-# Ignore Python temporary files
-__*
