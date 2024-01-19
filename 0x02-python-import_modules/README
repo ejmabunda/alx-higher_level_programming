@@ -11,3 +11,4 @@ import module_name
 1. `0_add.py` - imports the function `add` from the file `add_0.py`, and prints the result of its return value.
 2. `1-calculation.py` - imports functions from `calculator_1.py`, does some Math, and prints the results.
 3. `2-args.py` - prints the number of and the list of its arguments
+4. `3-infinite_add.py` - prints the sum of all its arguments, assuming they are integers.
