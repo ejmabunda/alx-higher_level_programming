@@ -1,0 +1,11 @@
+# Python import, and modules
+This project introduces python modules, files containing definition and statements can be used in other Python programs.
+## How to use:
+This statement imports the module `module_name.py`, note the exclusion of the file extension when importing.
+```
+import module_name
+
+# rest of code
+```
+## Tasks:
+1. `0_add.py` - imports the function `add` from the file `add_0.py`, and prints the result of its return value.
