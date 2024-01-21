@@ -4,6 +4,6 @@ for n in range(0, 100):
         print(n)
     else:
         if n > 10:
-            print(n, end=", ")
+            print("{0}".format(n), end=", ")
         else:
-            print(n, end=", ")
+            print("{0}".format(n), end=", ")
