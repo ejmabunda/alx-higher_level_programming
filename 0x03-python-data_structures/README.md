@@ -18,3 +18,4 @@ print(my_list[2]) // prints 3
 8. ` 8-multiple_returns.py` - returns a tuple with the length of a string and its first character
 9. `9-max_integer.py` - finds the biggest integer of a list
 10. `10-divisible_by_2.py` - finds all multiples of 2 in a list
+11. `11-delete_at.py` - deletes the item at a specifc position in a list
