@@ -8,4 +8,5 @@ print(my_list[2]) // prints 3
 ```
 
 ## Tasks
-- `0-print_list_integer.py` - prints all integers of a list.
+1. `0-print_list_integer.py` - prints all integers of a list.
+2. `1-element_at.py` - retrieves an element from a list
