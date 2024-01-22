@@ -6,3 +6,6 @@ This project explores lists. A list is a data structure designed to store data o
 my_list = [1, 2, 3, 4, 5]
 print(my_list[2]) // prints 3
 ```
+
+## Tasks
+- `0-print_list_integer.py` - prints all integers of a list.
