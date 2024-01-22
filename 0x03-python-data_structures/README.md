@@ -14,3 +14,4 @@ print(my_list[2]) // prints 3
 4. `3-print_reversed_list_integer.py` - prints all integers of a list, in reverse order.
 5. `4-new_in_list.py` - replaces an element without modifying the original list
 6. `5-no_c.py` - replaces all characters c and C from a string
+7. `7-add_tuple.py` - add 2 tuples
