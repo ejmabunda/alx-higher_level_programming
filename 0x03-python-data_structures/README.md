@@ -16,3 +16,4 @@ print(my_list[2]) // prints 3
 6. `5-no_c.py` - replaces all characters c and C from a string
 7. `7-add_tuple.py` - add 2 tuples
 8. ` 8-multiple_returns.py` - returns a tuple with the length of a string and its first character
+9. `9-max_integer.py` - finds the biggest integer of a list
