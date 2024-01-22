@@ -3,3 +3,6 @@
 
 # Ignore Python temp files
 __pycache__
+
+# Ignore main example programs
+*-main.*
