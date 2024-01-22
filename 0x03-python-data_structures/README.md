@@ -13,3 +13,4 @@ print(my_list[2]) // prints 3
 3. `2-replace_in_list.py` - replaces an element of a list at a specific position.
 4. `3-print_reversed_list_integer.py` - prints all integers of a list, in reverse order.
 5. `4-new_in_list.py` - replaces an element without modifying the original list
+6. `5-no_c.py` - replaces all characters c and C from a string
