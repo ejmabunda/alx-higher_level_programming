@@ -9,6 +9,9 @@ def add_tuple(tuple_a=(), tuple_b=()):
         except Exception:
             first = 0 + tuple_b[0]
 
+    if len(tuple_a) == 1 and len(tuple_b) == 1:
+        return (first, 0)
+
     # try to add seconds
     try:
         second = tuple_a[1] + tuple_b[1]
