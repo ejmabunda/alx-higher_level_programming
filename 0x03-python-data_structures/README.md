@@ -19,3 +19,4 @@ print(my_list[2]) // prints 3
 9. `9-max_integer.py` - finds the biggest integer of a list
 10. `10-divisible_by_2.py` - finds all multiples of 2 in a list
 11. `11-delete_at.py` - deletes the item at a specifc position in a list
+12. ` 12-switch.py` - switches the value of a and b
