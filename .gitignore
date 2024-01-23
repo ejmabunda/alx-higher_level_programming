@@ -6,3 +6,7 @@ __pycache__
 
 # Ignore main example programs
 *-main.*
+
+# Ignore compiled files
+*[!.]*
+*.out
