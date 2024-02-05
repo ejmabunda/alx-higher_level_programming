@@ -6,3 +6,4 @@ This repository houses ALX projects in high-level programming.
 3. `0x02-python-import_modules` - this project introduces modules, files containing definitions and statements.
 3. `0x03-python-data_structures` - this project introduces data structures: lists and tuples.
 4. `0x04-python-more_data_structures` - this projects explores more data structures: sets, and dictionaries.
+5. `0x04-python-exception` - this projects explores exceptions.
