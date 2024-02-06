@@ -8,3 +8,4 @@ Exceptions are errors detected during executions. In this project, we're explori
 4. `4-list_division.py` - divides element 2 lists
 5. `5-raise_exception.py` - raises a type exception
 6. `6-raise_exception_msg.py` - raises a name exception with a message
+7. `100-safe_print_integer_err.py` - prints an integer
