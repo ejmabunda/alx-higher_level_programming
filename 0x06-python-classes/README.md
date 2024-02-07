@@ -54,3 +54,6 @@ class Child(Parent):
 ### You can inherit multiple classes
 ...By providing a tuple of class Names in the Subclass definition:
 `class Child(Parent1, Parent2, Parent3):`
+
+## Tasks:
+1. `0-square.py` - defines an empty square
