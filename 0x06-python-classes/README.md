@@ -52,4 +52,5 @@ class Child(Parent):
 *NB: you have to call `Parent.__init__(self, ...)` in the child class/classes. to initialize the `Parent` attributes in the `Child`
 
 ### You can inherit multiple classes
-...By providing a tuple of class Names in the Subclass definition
+...By providing a tuple of class Names in the Subclass definition:
+`class Child(Parent1, Parent2, Parent3):`
