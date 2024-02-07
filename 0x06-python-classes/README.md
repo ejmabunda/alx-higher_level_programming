@@ -60,3 +60,4 @@ class Child(Parent):
 2. `1-square.py` - defines a `Square` class with a private attribute
 3. `2-square.py` - defines a `Square` class with optional private attribute
 4. `3-square.py` - defines a `Square` class with optional private attribute and public instance method.
+5. `4-square.py` - based on `3-square.py`, adds a public instance method, `area`.
