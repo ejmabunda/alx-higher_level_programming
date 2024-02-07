@@ -62,3 +62,4 @@ class Child(Parent):
 4. `3-square.py` - defines a `Square` class with optional private attribute and public instance method.
 5. `4-square.py` - based on `3-square.py`, adds a public instance method, `area`.
 6. `5-square.py` - based on `4-square.py`, adds a method to print the square using #.
+7. `6-square.py` - based on `5-square.py`, adds a position instance attribute and its getter and setter methods.
