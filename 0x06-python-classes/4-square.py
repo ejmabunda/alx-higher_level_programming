@@ -37,7 +37,7 @@ class Square:
     def size(self):
         """Returns the size of the square.
 
-        Returns: 
+        Returns:
             int: The size of the square
         """
         return self.__size
