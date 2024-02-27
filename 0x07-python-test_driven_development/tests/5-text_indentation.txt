@@ -1,0 +1,32 @@
+doctests for the text_indentation function
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Prints a text with 2 new lines after '.', '?', or ':'.
+>>> text = "This is a sample text, or is it? Adding a per:iod for testing."
+>>> text_indentation(text)
+This is a sample text, or is it?
+<BLANKLINE>
+Adding a per:
+<BLANKLINE>
+iod for testing.
+<BLANKLINE>
+
+text must be a string
+>>> text = 3
+>>> text_indentation(text)
+Traceback (most recent call last):
+	  ...
+TypeError: text must be a string
+
+>>> text = 3.2
+>>> text_indentation(text)
+Traceback (most recent call last):
+	  ...
+TypeError: text must be a string
+
+>>> text = True
+>>> text_indentation(text)
+Traceback (most recent call last):
+	  ...
+TypeError: text must be a string

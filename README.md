@@ -9,3 +9,5 @@ This repository houses ALX projects in high-level programming.
 - `0x05-python-exceptions` - this projects explores exceptions.
 - `0x06-python-classes` - this project introduces Object-Oriented programming
 - `0x09-python-everything_is_object` - this projects focusses on objects, variables and ways to use them.
+- `0x07-python-test_driven_development` - enforces a test-driven development, where each module and function must be preceded by documentation and tests.
+

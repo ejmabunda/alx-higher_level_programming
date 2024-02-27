@@ -1,0 +1,26 @@
+doctests for the print_square function
+
+>>> print_square = __import__('4-print_square').print_square
+
+size must be an integer
+>>> print_square("three")
+Traceback (most recent call last):
+	  ...
+TypeError: size must be an integer
+
+>>> print_square(3.2)
+Traceback (most recent call last):
+	  ...
+TypeError: size must be an integer
+
+size must be >= 0
+>>> print_square(-3000)
+Traceback (most recent call last):
+	  ...
+TypeError: size must be >= 0
+
+size can't be a negative float
+>>> print_square(-2.3)
+Traceback (most recent call last):
+	  ...
+TypeError: size must be an integer
