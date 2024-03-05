@@ -11,3 +11,4 @@ This repository houses ALX projects in high-level programming.
 - `0x09-python-everything_is_object` - this projects focusses on objects, variables and ways to use them.
 - `0x07-python-test_driven_development` - enforces a test-driven development, where each module and function must be preceded by documentation and tests.
 - `0x08-python-more_classes` - introduces an advanced Rectangle class with OOP principles, encompassing properties, methods, class attributes, static and class methods, ensuring encapsulation, and facilitating manipulation and representation of rectangles.
+- `0x0A-python-inheritance` - introduces inheritance in Python
