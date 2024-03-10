@@ -107,3 +107,22 @@ class Rectangle(Base):
 
         """
         return self.__width * self.__height
+
+    def display(self):
+        """Prints the rectangle using #."""
+        for row in range(self.__height):
+            for col in range(self.__width):
+                print('#', end='')
+            print()
+
+    def __str__(self):
+        """Returns a string representation of a Rectangle.
+
+        Returns:
+            str: A string representation of a Rectangle.
+
+        """
+        # I had to split for pycodestyle.
+        s = f"[Rectangle] ({self.id}) {self.x}/{self.y} "
+
+        return s + f"- {self.width}/{self.height}"
