@@ -6,15 +6,32 @@ from models.rectangle import Rectangle
 class TestRectangle(unittest.TestCase):
     def test_IntegerValidator(self):
         """Test case for the integer_validator function."""
-        with self.assertRaises(TypeError):
+        # Tests for width/height types.
+        with self.assertRaises(TypeError) as e:
             Rectangle(10, "2")
-        with self.assertRaises(TypeError):
+        self.assertEqual(str(e.exception), 'height must be an integer')
+        
+        with self.assertRaises(TypeError) as e:
             Rectangle("10", 2)
-            
-        with self.assertRaises(ValueError):
+        self.assertEqual(str(e.exception), 'width must be an integer')
+
+        # Tests for width/height values.
+        with self.assertRaises(ValueError) as e:
             Rectangle(10, 0)
-        with self.assertRaises(ValueError):
+        self.assertEqual(str(e.exception), 'height must be > 0')
+
+        with self.assertRaises(ValueError) as e:
             Rectangle(0, 2)
+        self.assertEqual(str(e.exception), 'width must be > 0')
+
+        # Tests for x/y values.
+        with self.assertRaises(ValueError) as e:
+            Rectangle(10, 3, -1, 3)
+        self.assertEqual(str(e.exception), 'x must be >= 0')
+
+        with self.assertRaises(ValueError) as e:
+            Rectangle(1, 2, 2, -2)
+        self.assertEqual(str(e.exception), 'y must be >= 0')
 
         Rectangle.reset()  # Reset class attribute, 'id'
 

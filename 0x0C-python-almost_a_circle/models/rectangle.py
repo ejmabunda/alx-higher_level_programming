@@ -53,7 +53,7 @@ class Rectangle(Base):
                     raise ValueError(f"{name} must be > 0")
             if name == 'x' or name == 'y':
                 if n < 0:
-                    raise ValueError(f"{name} must be > 0")
+                    raise ValueError(f"{name} must be >= 0")
 
     @property
     def width(self):
