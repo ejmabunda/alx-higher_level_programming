@@ -7,6 +7,7 @@ class TestRectangle(unittest.TestCase):
     def test_IntegerValidator(self):
         with self.assertRaises(TypeError):
             Rectangle(10, "2")
+
         Rectangle.reset()
 
     def test_RectangleId(self):
@@ -18,3 +19,5 @@ class TestRectangle(unittest.TestCase):
 
         self.r3 = Rectangle(10, 2, 0, 0, 12)
         self.assertEqual(self.r3.id, 12)
+
+        Rectangle.reset()
