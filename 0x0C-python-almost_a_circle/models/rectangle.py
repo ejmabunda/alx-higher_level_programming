@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """This module supplies the Rectangle class
 """
 from models.base import Base
