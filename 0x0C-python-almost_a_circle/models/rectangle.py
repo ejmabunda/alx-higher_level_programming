@@ -91,3 +91,12 @@ class Rectangle(Base):
     def y(self, value):
         """Sets a new value for the private property, y"""
         self.__y = value
+
+    def area(self):
+        """Calculates the area of the rectangle instance.
+
+        Returns:
+            int: The area value of the rectangle instance.
+
+        """
+        return self.__width * self.__height
