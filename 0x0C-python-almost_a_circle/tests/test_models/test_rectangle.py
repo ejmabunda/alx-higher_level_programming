@@ -8,6 +8,7 @@ class TestRectangle(unittest.TestCase):
         """Test case for the integer_validator function."""
         with self.assertRaises(TypeError):
             Rectangle(10, "2")
+            Rectangle("10", 2)
 
         Rectangle.reset()  # Reset class attribute, 'id'
 
