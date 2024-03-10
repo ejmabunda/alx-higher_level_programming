@@ -9,6 +9,10 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             Rectangle(10, "2")
             Rectangle("10", 2)
+            
+        with self.assertRaises(ValueError):
+            Rectangle(10, 0)
+            Rectangle(0, 2)
 
         Rectangle.reset()  # Reset class attribute, 'id'
 
