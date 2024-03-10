@@ -60,7 +60,7 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """Sets a new value for the private property, width"""
-        self.integer_validator(value=value)
+        self.integer_validator(width=value)
         self.__width = value
 
     @property
@@ -71,7 +71,7 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         """Sets a new value for the private property, height"""
-        self.integer_validator(value=value)
+        self.integer_validator(height=value)
         self.__height = value
 
     @property
@@ -82,7 +82,7 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """Sets a new value for the private property, x"""
-        self.integer_validator(value=value)
+        self.integer_validator(x=value)
         self.__x = value
 
     @property
@@ -93,7 +93,7 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         """Sets a new value for the private property, y"""
-        self.integer_validator(value=value)
+        self.integer_validator(y=value)
         self.__y = value
 
     def area(self):
