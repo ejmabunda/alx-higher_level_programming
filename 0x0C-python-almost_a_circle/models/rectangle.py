@@ -127,7 +127,7 @@ class Rectangle(Base):
 
         return s + f"- {self.width}/{self.height}"
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Assigns a new value to each attribute.
 
         Args:
@@ -138,18 +138,40 @@ class Rectangle(Base):
                 x (int): The new value for Rectangle x offset.
                 y (int): The new value for Rectangle y offset.
 
+            **kwargs: Variable length keyworded arguments, expected
+                id (int): The new value for Rectangle id.
+                width (int): The new value for Rectangle width.
+                height (int): The new value for Rectangle height.
+                x (int): The new value for Rectangle x offset.
+                y (int): The new value for Rectangle y offset.
+
         """
-        counter = 0
-        for n in args:
-            if counter == 0:
-                self.integer_validator(id=n)
-                self.id = n
-            elif counter == 1:
-                self.width = n
-            elif counter == 2:
-                self.height = n
-            elif counter == 3:
-                self.x = n
-            elif counter == 4:
-                self.y = n
-            counter += 1
+        if len(args) != 0:
+            counter = 0
+            for n in args:
+                if counter == 0:
+                    self.integer_validator(id=n)
+                    self.id = n
+                elif counter == 1:
+                    self.width = n
+                elif counter == 2:
+                    self.height = n
+                elif counter == 3:
+                    self.x = n
+                elif counter == 4:
+                    self.y = n
+                counter += 1
+            return
+
+        for attr, value in kwargs.items():
+            if attr == 'id':
+                self.integer_validator(id=value)
+                self.id = value
+            elif attr == 'width':
+                self.width = value
+            elif attr == 'height':
+                self.height = value
+            elif attr == 'x':
+                self.x = value
+            elif attr == 'y':
+                self.y = value
