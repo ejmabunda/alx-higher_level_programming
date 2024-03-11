@@ -76,8 +76,33 @@ class TestRectangle(unittest.TestCase):
 
     def test___str__(self):
         """Test cases for the __str__ function"""
+        Rectangle.reset()
         r1 = Rectangle(4, 6, 2, 1, 12)
         self.assertEqual(r1.__str__(), '[Rectangle] (12) 2/1 - 4/6')
 
         r2 = Rectangle(5, 5, 1)
         self.assertEqual(r2.__str__(), '[Rectangle] (1) 1/0 - 5/5')
+
+        Rectangle.reset()
+
+    def test_RectangleUpdate(self):
+        """Test cases for the update funtion"""
+        r1 = Rectangle(10, 10, 10, 10)
+        self.assertEqual(r1.__str__(), '[Rectangle] (1) 10/10 - 10/10')
+
+        r1.update(89)
+        self.assertEqual(r1.__str__(), '[Rectangle] (89) 10/10 - 10/10')
+
+        r1.update(89, 2)
+        self.assertEqual(r1.__str__(), '[Rectangle] (89) 10/10 - 2/10')
+
+        r1.update(89, 2, 3)
+        self.assertEqual(r1.__str__(), '[Rectangle] (89) 10/10 - 2/3')
+
+        r1.update(89, 2, 3, 4)
+        self.assertEqual(r1.__str__(), '[Rectangle] (89) 4/10 - 2/3')
+
+        r1.update(89, 2, 3, 4, 5)
+        self.assertEqual(r1.__str__(), '[Rectangle] (89) 4/5 - 2/3')
+
+        Rectangle.reset()  # Resets Rectangle's class attribute, 'id'

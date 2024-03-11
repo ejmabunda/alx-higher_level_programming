@@ -126,3 +126,30 @@ class Rectangle(Base):
         s = f"[Rectangle] ({self.id}) {self.x}/{self.y} "
 
         return s + f"- {self.width}/{self.height}"
+
+    def update(self, *args):
+        """Assigns a new value to each attribute.
+
+        Args:
+            *args: Variable length no-keyword arguments, expected
+                id (int): The new value for Rectangle id.
+                width (int): The new value for Rectangle width.
+                height (int): The new value for Rectangle height.
+                x (int): The new value for Rectangle x offset.
+                y (int): The new value for Rectangle y offset.
+
+        """
+        counter = 0
+        for n in args:
+            if counter == 0:
+                self.integer_validator(id=n)
+                self.id = n
+            elif counter == 1:
+                self.width = n
+            elif counter == 2:
+                self.height = n
+            elif counter == 3:
+                self.x = n
+            elif counter == 4:
+                self.y = n
+            counter += 1
