@@ -5,11 +5,17 @@ from models.rectangle import Rectangle
 
 
 class TestRectangle(unittest.TestCase):
-    def test_RectangleId(self):
-        """Test case for a Rectangle's id"""
-
+    """Test class for the Rectangle class"""
+    def setUp(self):
+        """Called before each test"""
         Rectangle.reset()
 
+    def tearDown(self):
+        """Called after each test"""
+        Rectangle.reset()
+
+    def test_RectangleId(self):
+        """Test case for a Rectangle's id"""
         self.r1 = Rectangle(10, 2)
         self.assertEqual(self.r1.id, 1)
 
@@ -18,8 +24,6 @@ class TestRectangle(unittest.TestCase):
 
         self.r3 = Rectangle(10, 2, 0, 0, 12)
         self.assertEqual(self.r3.id, 12)
-
-        Rectangle.reset()  # Reset class attribute, 'id'
 
     def test_IntegerValidator(self):
         """Test case for the integer_validator function."""
@@ -50,8 +54,6 @@ class TestRectangle(unittest.TestCase):
             Rectangle(1, 2, 2, -2)
         self.assertEqual(str(e.exception), 'y must be >= 0')
 
-        Rectangle.reset()  # Reset class attribute, 'id'
-
     def test_RectangleArea(self):
         """Test case for the Rectangle.area() function"""
         r1 = Rectangle(3, 2)
@@ -62,8 +64,6 @@ class TestRectangle(unittest.TestCase):
 
         r3 = Rectangle(8, 7, 0, 0, 12)
         self.assertEqual(r3.area(), 56)
-
-        Rectangle.reset()  # Reset class attribute, 'id'
 
     '''@patch('sys.stdout', new_callable=StringIO)
     def test_RectangleDisplay(self, mock_stdout):
@@ -76,14 +76,11 @@ class TestRectangle(unittest.TestCase):
 
     def test___str__(self):
         """Test cases for the __str__ function"""
-        Rectangle.reset()
         r1 = Rectangle(4, 6, 2, 1, 12)
         self.assertEqual(r1.__str__(), '[Rectangle] (12) 2/1 - 4/6')
 
         r2 = Rectangle(5, 5, 1)
         self.assertEqual(r2.__str__(), '[Rectangle] (1) 1/0 - 5/5')
-
-        Rectangle.reset()
 
     def test_RectangleUpdate(self):
         """Test cases for the update funtion"""
@@ -105,9 +102,7 @@ class TestRectangle(unittest.TestCase):
         r1.update(89, 2, 3, 4, 5)
         self.assertEqual(r1.__str__(), '[Rectangle] (89) 4/5 - 2/3')
 
-        Rectangle.reset()  # Resets Rectangle's class attribute, 'id'
-
-    def test_RectangleUpdate2(self):
+    def test_rectangle_update2(self):
         """Test cases the update (with kwargs) function"""
         r1 = Rectangle(10, 10, 10, 10)
         self.assertEqual(r1.__str__(), '[Rectangle] (1) 10/10 - 10/10')
@@ -124,4 +119,19 @@ class TestRectangle(unittest.TestCase):
         r1.update(x=1, height=2, y=3, width=4)
         self.assertEqual(r1.__str__(), '[Rectangle] (89) 1/3 - 4/2')
 
-        Rectangle.reset()  # Resets Rectangle class attribute, 'id'.
+    def test_to_dictionary(self):
+        """Test cases for the to_dictionary method."""
+        r1 = Rectangle(10, 2, 1, 9)
+        self.assertEqual(r1.__str__(), '[Rectangle] (1) 1/9 - 10/2')
+
+        r1_dictionary = r1.to_dictionary()
+        self.assertEqual(r1_dictionary, {'x': 1, 'y': 9, 'id': 1, 'height': 2, 'width': 10})
+        self.assertEqual(type(r1_dictionary), dict)
+
+        r2 = Rectangle(1, 1)
+        self.assertEqual(r2.__str__(), '[Rectangle] (2) 0/0 - 1/1')
+
+        r2.update(**r1_dictionary)
+        self.assertEqual(r2.__str__(), '[Rectangle] (1) 1/9 - 10/2')
+
+        self.assertEqual(r1 == r2, False)
