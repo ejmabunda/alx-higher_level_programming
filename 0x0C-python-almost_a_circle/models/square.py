@@ -32,3 +32,46 @@ class Square(Rectangle):
         """
         self.width = value
         self.height = value
+
+    def update(self, *args, **kwargs):
+        """Updates attributes of the Square instance.
+
+        Args:
+            *args: Variable length no-keyword arguments, expected
+                id (int): The new value for Square id.
+                size (int): The new value for Square size.
+                x (int): The new value for Square x offset.
+                y (int): The new value for Square y offset.
+
+            **kwargs: Variable-length keyworded arguments, expected
+                id (int): The new value for Square id.
+                size (int): The new value for Square size.
+                x (int): The new value for Square x offset.
+                y (int): The new value for Square y offset.
+
+        """
+        if len(args) != 0:
+            counter = 0
+            for item in args:
+                if counter == 0:
+                    self.integer_validator(id=item)
+                    self.id = item
+                elif counter == 1:
+                    self.size = item
+                elif counter == 2:
+                    self.x = item
+                elif counter == 3:
+                    self.y = item
+                counter += 1
+            return
+
+        for attr, value in kwargs.items():
+            if attr == 'id':
+                self.integer_validator(id=value)
+                self.id = value
+            elif attr == 'size':
+                self.size = value
+            elif attr == 'x':
+                self.x = value
+            elif attr == 'y':
+                self.y = value
