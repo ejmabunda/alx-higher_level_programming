@@ -36,3 +36,20 @@ class TestSquare(unittest.TestCase):
 
         s3 = Square(3, 1, 3)
         self.assertEqual(s3.area(), 9)
+
+    def test_SquareSize(self):
+        """Test cases for the size setter method."""
+        s1 = Square(5)
+
+        self.assertEqual(s1.__str__(), '[Square] (1) 0/0 - 5')
+
+        self.assertEqual(s1.size, 5)
+
+        s1.size = 10
+
+        self.assertEqual(s1.__str__(), '[Square] (1) 0/0 - 10')
+
+        try:
+            s1.size = "9"
+        except Exception as e:
+            self.assertEqual('TypeError', e.__class__.__name__)
