@@ -52,3 +52,31 @@ class TestBase(unittest.TestCase):
             # Expected result
             expected = [{"y": 8, "x": 2, "id": 1, "width": 10, "height": 7}, {"y": 0, "x": 0, "id": 2, "width": 2, "height": 4}]
             self.assertEqual(data, expected)
+
+    def test_from_json_string(self):
+        """Test cases for the from_json_string method."""
+        list_input = [
+            {'id': 89, 'width': 10, 'height': 4},
+            {'id': 7, 'width': 1, 'height': 7}
+        ]
+
+        json_list_input = Rectangle.to_json_string(list_input)
+
+        list_output = Rectangle.from_json_string(json_list_input)
+
+        expected_list_input = sorted([{'height': 4, 'width': 10, 'id': 89}, {'height': 7, 'width': 1, 'id': 7}], key=lambda x: x['id'])
+        expected_json_list_input = sorted([{"height": 4, "width": 10, "id": 89}, {"height": 7, "width": 1, "id": 7}], key=lambda x: x['id'])
+        expected_list_output = sorted([{'height': 4, 'width': 10, 'id': 89}, {'height': 7, 'width': 1, 'id': 7}], key=lambda x: x['id'])
+
+        list_input.sort(key=lambda x: x['id'])
+        json_list_input = json.dumps(sorted(json.loads(json_list_input), key=lambda x: x['id']), sort_keys=True)
+        list_output.sort(key=lambda x: x['id'])
+
+        self.assertEqual(type(list_input), list)
+        self.assertEqual(json.dumps(list_input, sort_keys=True), json.dumps(expected_list_input, sort_keys=True))
+
+        self.assertEqual(type(json_list_input), str)
+        self.assertEqual(json_list_input, json.dumps(expected_json_list_input, sort_keys=True))
+
+        self.assertEqual(type(list_output), list)
+        self.assertEqual(json.dumps(list_output, sort_keys=True), json.dumps(expected_list_output, sort_keys=True))
