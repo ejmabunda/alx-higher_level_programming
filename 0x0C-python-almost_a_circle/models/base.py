@@ -71,5 +71,19 @@ class Base:
         """
         if json_string is None or json_string == '':
             return ""
-        else:
-            return json.loads(json_string)
+        return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """Returns an instance with all attributes already set.
+
+        Args:
+            dictionary (dict): A dictionary consisting of object attributes.
+
+        Returns:
+            Rectangle: An new Rectangle instance with attributes set.
+
+        """
+        dummy = cls(1, 1)
+        dummy.update(**dictionary)
+        return dummy
