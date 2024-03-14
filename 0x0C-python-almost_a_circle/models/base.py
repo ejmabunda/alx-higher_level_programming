@@ -2,6 +2,7 @@
 """This module supplies a class, Base.
 """
 import json
+import os
 
 
 class Base:
@@ -87,3 +88,28 @@ class Base:
         dummy = cls(1, 1)
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """Retrieves a list of Rectangle/Square instances from a json file.
+
+        Returns:
+            List[Square or Rectangle]: A list of either Rectangle or
+                Square instances.
+
+        """
+        filename = f'{cls.__name__}.json'
+        if not os.path.isfile(filename):
+            return []
+
+        with open(filename, 'r', encoding='utf-8') as file:
+            json_data = json.load(file)
+            json_string = json.dumps(json_data)
+            list_inst = cls.from_json_string(json_string)
+
+        list_objs = []
+
+        for inst in list_inst:
+            list_objs.append(cls.create(**inst))
+
+        return list_objs
