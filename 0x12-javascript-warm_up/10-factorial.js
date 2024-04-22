@@ -1,10 +1,14 @@
 #!/usr/bin/node
-const argv = require('process:node');
+const args = process.argv;
 
-console.log(factorial(argv[2]));
+if (isNaN(args[2])) {
+  console.log(factorial(1));
+} else {
+  console.log(factorial(Number(args[2])));
+}
 
 function factorial (a) {
   if (a === 1) {
     return 1;
-  } return 1 + factorial(a - 1);
+  } return a * factorial(a - 1);
 }
