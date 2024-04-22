@@ -1,10 +1,17 @@
 #!/usr/bin/node
-const argv = require('process:node');
+const args = process.argv;
 
-console.log(second_biggest(argv[2]));
+console.log(secondBiggest(args));
 
-function second_biggest (a) {
-  if (a === 1) {
-    return 1;
-  } return 1 + factorial(a - 1);
+function secondBiggest (args) {
+  let biggest = 0
+  let second_biggest = 0;
+  
+  for (let a = 2; a < args.length; a++) {
+    if (args[a] > biggest) {
+      second_biggest = biggest;
+      biggest = args[a];
+    }
+  }
+  return second_biggest;
 }
