@@ -1,11 +1,11 @@
 #!/usr/bin/node
-const argv = require('process:node');
-const x = Number(argv[2]);
+const args = process.argv;
 
-if (!process.argv[2] || !Number.isInteger(x)) {
+if (args.length < 2 || !Number.isInteger(Number(args[2]))) {
   console.log('Missing number of occurrences');
 } else {
-  for (let i = 0; i < x; i++) {
+  const numOccurrences = Number(args[2]);
+  for (let i = 0; i < numOccurrences; i++) {
     console.log('C is fun');
   }
 }
