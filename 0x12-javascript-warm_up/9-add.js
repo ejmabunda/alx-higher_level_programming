@@ -1,8 +1,8 @@
 #!/usr/bin/node
-const argv = require('process:node');
+const args = process.argv;
 
-console.log(add(argv[2] + argv[3]));
+console.log(add(args[2], args[3]));
 
 function add (a, b) {
-  return a + b;
+  return Number(a) + Number(b);
 }
