@@ -5,7 +5,7 @@ class Rectangle {
       this.width = w;
       this.height = h;
     } else {
-      Object.assign(this, {});
+      return {};
     }
   }
 }
